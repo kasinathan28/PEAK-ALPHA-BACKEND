@@ -1,0 +1,82 @@
+<!-- receipt_template.html -->
+<html>
+
+<head>
+  <title>Receipt</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #f4f4f4;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      padding: 30px;
+    }
+
+    h1 {
+      color: #1e90ff;
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    .receipt-details {
+      margin-top: 20px;
+      border-top: 1px solid #ccc;
+      padding-top: 20px;
+    }
+
+    .receipt-details p {
+      margin: 5px 0;
+    }
+
+    log {
+      color: green;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>PEAK<strong>A</strong>LPHA</h1>
+    <h1>Receipt for Your Payment</h1>
+    <p>
+      Thank you for your payment. Here is your receipt for the recent
+      purchase:
+    </p>
+    <div>
+      <p>Please find your payment reciept attached.</p>
+    </div>
+    <div>
+      If you hava any question or concerns, feel free to contact our support team.
+    </div>
+    <div class="receipt-details">
+      <h2>Shipping Details</h2>
+      <p>
+        <strong>Amount:</strong> ${paymentIntent.amount}
+        ${paymentIntent.currency.toUpperCase()}
+      </p>
+      <p><strong>Name:</strong> ${paymentIntent.shipping.name}</p>
+      <p>
+        <strong>Address:</strong> ${paymentIntent.shipping.address.line1},
+        ${paymentIntent.shipping.address.line2}
+        ${paymentIntent.shipping.address.city},
+        ${paymentIntent.shipping.address.state},
+        ${paymentIntent.shipping.address.postal_code},
+        ${paymentIntent.shipping.address.country}
+      </p>
+      <p><strong>Phone:</strong> ${paymentIntent.shipping.phone}</p>
+    </div>
+  </div>
+</body>
+
+</html>
