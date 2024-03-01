@@ -4,8 +4,6 @@ const generatePDF = require('../pdfGenerator');
 const fs = require("fs");
 const nodemailer = require("nodemailer");
 
-
-
 // Making purchase in the stripe
 exports.makePurchase = async (req, res) => {
   const { productId } = req.params;
@@ -59,7 +57,6 @@ exports.makePurchase = async (req, res) => {
     res.status(500).json({ error: "Failed to make purchase" });
   }
 };
-
 
 
 // Get details with the session id
@@ -124,7 +121,6 @@ exports.sendReceiptByEmail = async (req, res) => {
         return;
       }
 
-
       const customer = paymentIntent.customer;
 
       console.log(customer);
@@ -164,7 +160,3 @@ exports.sendReceiptByEmail = async (req, res) => {
     res.status(500).json({ error: "Failed to send receipt" });
   }
 };
-
-
-
-

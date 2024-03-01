@@ -83,7 +83,6 @@ router.put('/updateProduct/:productId', adminController.updateProduct);
 router.post('/updateStripeProduct/:productId', adminController.updateStripeProduct);
 
 // Roouter for deleting the product
-// router.delete('/deleteProduct/:productId', adminController.deleteProduct);
 router.delete('/deleteProduct/:productId', adminController.deleteProduct);
 
 // Router for getting all the users in the database 
@@ -117,7 +116,6 @@ router.get('/getBookingDetails/:session_id', StripeController.getBookignDetails)
 
 // crete invoice
 router.post('/createInvoice/:payment_intent', StripeController.sendReceiptByEmail);
-
 
 
 // Export Router
